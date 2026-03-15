@@ -22,6 +22,13 @@ mvn clean compile
   mvn exec:java -Dexec.args="echo hello world"
   ```
 
+## Test
+
+- Run unit tests:
+  ```sh
+  mvn test
+  ```
+
 ## Deploy to Cluster
 apex submit target/apex-app-1.0-SNAPSHOT.apex
 
