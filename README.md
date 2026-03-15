@@ -11,7 +11,16 @@ This project is initialized with Apache Apex for stream processing.
 mvn clean compile
 
 ## Run Locally
-mvn exec:java
+
+- Run in local debug mode:
+  ```sh
+  mvn exec:java -Dexec.args="local"
+  ```
+
+- Echo arbitrary values:
+  ```sh
+  mvn exec:java -Dexec.args="echo hello world"
+  ```
 
 ## Deploy to Cluster
 apex submit target/apex-app-1.0-SNAPSHOT.apex
