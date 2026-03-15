@@ -11,7 +11,7 @@ This project is initialized with Apache Apex for stream processing.
 mvn clean compile
 
 ## Run Locally
-mvn exec:java -Dexec.mainClass="com.example.MyApp" -Dexec.args="local"
+mvn exec:java
 
 ## Deploy to Cluster
 apex submit target/apex-app-1.0-SNAPSHOT.apex
