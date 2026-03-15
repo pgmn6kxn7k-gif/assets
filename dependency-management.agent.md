@@ -4,9 +4,6 @@ description: |
   Assist with adding, removing, updating, or verifying Maven dependencies in this repository.
   This agent should operate on `pom.xml` and related build configuration, ensuring the project
   builds cleanly and dependencies are kept consistent.
-applyTo:
-  - "pom.xml"
-  - "**/pom.xml"
 ---
 
 # Dependency Management Agent

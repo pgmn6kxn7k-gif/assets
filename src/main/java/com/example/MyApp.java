@@ -2,7 +2,12 @@ package com.example;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class MyApp {
+    private static final Logger logger = LoggerFactory.getLogger(MyApp.class);
+
     public static void main(String[] args) {
         if (args.length == 0) {
             printUsage();
@@ -18,7 +23,7 @@ public class MyApp {
                 runEcho(Arrays.copyOfRange(args, 1, args.length));
                 break;
             default:
-                System.err.println("Unknown mode: " + mode);
+                logger.error("Unknown mode: {}", mode);
                 printUsage();
         }
     }
@@ -27,12 +32,12 @@ public class MyApp {
         MyOperator operator = new MyOperator();
         operator.process("hello");
         operator.process("world");
-        System.out.println("Local processing complete");
+        logger.info("Local processing complete");
     }
 
     private static void runEcho(String[] values) {
         if (values.length == 0) {
-            System.err.println("No values provided to echo.");
+            logger.warn("No values provided to echo.");
             return;
         }
 
@@ -41,7 +46,7 @@ public class MyApp {
             operator.process(value);
         }
 
-        System.out.println("Echo processing complete");
+        logger.info("Echo processing complete");
     }
 
     private static void printUsage() {
