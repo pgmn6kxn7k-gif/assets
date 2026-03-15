@@ -13,34 +13,45 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>apache.snapshots</id>
+      <name>Apache Development Snapshot Repository</name>
+      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>apache.incubator</id>
+      <name>Apache Incubator Repository</name>
+      <url>https://repository.apache.org/content/repositories/incubator/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>apache.snapshots</id>
+      <name>Apache Development Snapshot Repository</name>
+      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>apache.incubator</id>
+      <name>Apache Incubator Repository</name>
+      <url>https://repository.apache.org/content/repositories/incubator/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
   <dependencies>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
-      <artifactId>apex-api</artifactId>
-      <version>${apex.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
-      <artifactId>apex-engine</artifactId>
-      <version>${apex.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.apex</groupId>
-      <artifactId>apex-common</artifactId>
-      <version>${apex.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common</artifactId>
-      <version>2.7.3</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-hdfs</artifactId>
-      <version>2.7.3</version>
-      <scope>provided</scope>
-    </dependency>
   </dependencies>
 
   <build>
@@ -53,18 +64,6 @@
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.apex</groupId>
-        <artifactId>apex-maven-plugin</artifactId>
-        <version>${apex.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate-launcher</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
