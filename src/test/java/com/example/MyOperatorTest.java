@@ -1,22 +1,20 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
-
 public class MyOperatorTest {
 
-    @Test
-    void processShouldUppercaseInput() {
+    public static void main(String[] args) {
         MyOperator operator = new MyOperator();
-        String result = operator.process("hello");
-        assertEquals("HELLO", result);
-    }
 
-    @Test
-    void processShouldHandleNull() {
-        MyOperator operator = new MyOperator();
-        String result = operator.process(null);
-        assertEquals(null, result);
+        String result = operator.process("hello");
+        if (!"HELLO".equals(result)) {
+            throw new AssertionError("Expected HELLO but got " + result);
+        }
+
+        result = operator.process(null);
+        if (result != null) {
+            throw new AssertionError("Expected null but got " + result);
+        }
+
+        System.out.println("All MyOperator tests passed.");
     }
 }

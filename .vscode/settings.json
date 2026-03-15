@@ -1,0 +1,11 @@
+{
+  "java.project.referencedLibraries": [],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "/usr/local/sdkman/candidates/java/8.0.***"
+    }
+  ],
+  "java.import.maven.enabled": true,
+  "java.project.importHint": "enabled"
+}
